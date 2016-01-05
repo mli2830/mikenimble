@@ -1,5 +1,6 @@
 require(R2jags)
 
+set.seed(seed)
 obs <- c(5,10,15,NA,NA,NA)
 lag <- 2
 lagvec <- 1:lag
@@ -55,3 +56,5 @@ mod <- jags(data=data,
 print(mod)
 
 obs <- round(mod$BUGSoutput$mean$obs)
+
+save.image(file="jags.sim.RData")

@@ -1,27 +1,17 @@
-### Hooks for the editor to set the default target
+
 current: target
-	 less nimblep1.wrapR.rout
+	 less target
 
-target pngtarget pdftarget vtarget acrtarget: nimblep1.Rout
-
+target:	 nimblep1.Rout
 ##################################################################
 
+jags.sim:	params.R code.bug jags.sim.R
+		R CMD BATCH params.R
+		R CMD BATCH jags.sim.R
 
-# make files
-
-Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
-include stuff.mk
-# include $(ms)/perl.def
-
-##################################################################
-
-## Content
-
-jags.Rout:	params.R code.bug jags.sim.R
-		$(run-R)
-
-nimblep1.Rout:	jags.Rout nimcode.R nimblep1.R
-		$(run-R)
+nimblep1.Rout:  jags.sim.RData nimcode.R nimblep1.R
+		R CMD BATCH nimcode.R
+		R CMD BATCH nimblep1.R
 
 
 
@@ -37,3 +27,6 @@ nimblep1.Rout:	jags.Rout nimcode.R nimblep1.R
 
  -include $(ms)/wrapR.mk
  -include $(ms)/oldlatex.mk
+
+makestuff:	
+		git clone https://github.com/dushoff/makestuff.git
