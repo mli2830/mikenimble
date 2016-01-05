@@ -1,9 +1,9 @@
 # mikenimble
 ### Hooks for the editor to set the default target
 current: target
-	 less jags.wrapR.rout
+	 less nimblep1.wrapR.rout
 
-target pngtarget pdftarget vtarget acrtarget: jags.Rout
+target pngtarget pdftarget vtarget acrtarget: nimblep1.Rout
 
 ##################################################################
 
@@ -21,6 +21,8 @@ include stuff.mk
 jags.Rout:	params.R code.bug jags.sim.R
 		$(run-R)
 
+nimblep1.Rout:	jags.Rout nimcode.R nimblep1.R
+		$(run-R)
 
 
 

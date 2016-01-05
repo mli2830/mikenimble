@@ -1,9 +1,6 @@
 require(R2jags)
 
 obs <- c(5,10,15,NA,NA,NA)
-
-data <- list(obs=obs)
-
 lag <- 2
 lagvec <- 1:lag
 effRepHa <- effRepHShape/(1-effRepHmean)
