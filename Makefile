@@ -1,4 +1,3 @@
-# mikenimble
 ### Hooks for the editor to set the default target
 current: target
 	 less nimblep1.wrapR.rout
