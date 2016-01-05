@@ -1,2 +1,9 @@
 
 *.mk
+*~
+*.rout
+*.[r]
+*.Rout
+*.RData
+*.Rlog
+*.pdf
