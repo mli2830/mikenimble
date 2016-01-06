@@ -51,7 +51,7 @@ mod1 <- suite(c('jags'))
 print(mod1$summary)
 
 #Jags work and initializing the model works, but nimble MCMC hangs
-# mod2 <- suite(c("jags","nimble"))
+mod2 <- suite(c("jags","nimble"))
 mod <- nimbleModel(code=nimcode
                    , constants = nimconstants
                    , data = nimdata
@@ -59,5 +59,5 @@ mod <- nimbleModel(code=nimcode
 
 #build and configure MCMC hangs
 
-# modconfig <- configureMCMC(mod)
-# modbuild <- buildMCMC(mod)
+modconfig <- configureMCMC(mod)
+modbuild <- buildMCMC(mod)

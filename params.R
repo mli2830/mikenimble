@@ -1,7 +1,7 @@
 ###params 
 
 iterations <- 4000
-seed <- 3113
+seed <- 101
 
 # Reporting and effective population hyper-parameters
 effRepHmean <- 0.1
