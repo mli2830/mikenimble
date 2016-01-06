@@ -33,14 +33,31 @@ niminits <- list(genPos = gpMean
                    , obsMean=obs
 )
 
-
-mod1 <- MCMCsuite(code=nimcode
+suite <- function(type){
+  mod <- MCMCsuite(code=nimcode
                   , data=nimdata
                   , inits=niminits
                   , constants=nimconstants
-                  , MCMCs=c("jags")
+                  , MCMCs=type
                   , monitors=c("R0")
                   , calculateEfficiency=TRUE
+                  , makePlot=FALSE
+                  , savePlot=FALSE
                   , niter=iterations)
+  return(mod)
+}
 
+mod1 <- suite(c('jags'))
 print(mod1$summary)
+
+#Jags work and initializing the model works, but nimble MCMC hangs
+# mod2 <- suite(c("jags","nimble"))
+mod <- nimbleModel(code=nimcode
+                   , constants = nimconstants
+                   , data = nimdata
+                   , inits = niminits)
+
+#build and configure MCMC hangs
+
+# modconfig <- configureMCMC(mod)
+# modbuild <- buildMCMC(mod)
