@@ -1,7 +1,7 @@
 
 ### Hooks for the editor to set the default target
-current: target
-	 less nimble_hang.wrapR.rout
+current: makestuff
+
 
 target pngtarget pdftarget vtarget acrtarget: nimble_hang.Rout
 
