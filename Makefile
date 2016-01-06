@@ -1,4 +1,4 @@
-# mikenimble
+
 ### Hooks for the editor to set the default target
 current: target
 	 less nimblep1.wrapR.rout
@@ -11,7 +11,7 @@ target pngtarget pdftarget vtarget acrtarget: nimblep1.Rout
 # make files
 
 Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
-include stuff.mk
+# include stuff.mk
 # include $(ms)/perl.def
 
 ##################################################################
@@ -33,8 +33,12 @@ nimblep1.Rout:	jags.Rout nimcode.R nimblep1.R
 ## Change this name to download a new version of the makestuff directory
 # Makefile: start.makestuff
 
--include $(ms)/git.mk
--include $(ms)/visual.mk
+-include makestuff/git.mk
+-include makestuff/visual.mk
 
- -include $(ms)/wrapR.mk
- -include $(ms)/oldlatex.mk
+ -include makestuff/wrapR.mk
+ -include makestuff/oldlatex.mk
+
+
+makestuff: 
+	   git clone https://github.com/dushoff/makestuff.git
