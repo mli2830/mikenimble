@@ -1,6 +1,6 @@
 ###params 
 
-iterations <- 1000
+iterations <- 4000
 seed <- 3113
 
 # Reporting and effective population hyper-parameters
