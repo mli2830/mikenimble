@@ -21,7 +21,7 @@ Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
 jags.Rout:	params.R code.bug jags.sim.R
 		$(run-R)
 
-nimble_hang.Rout:	jags.Rout nimcode.R nimble_hang.R
+nimble_hang.Rout:	jags.RData nimcode.R nimble_hang.R
 			$(run-R)
 
 nimble_inprod.Rout:	jags.Rout params2.R nimcode2.R nimcode22.R nimble_inprod.R
