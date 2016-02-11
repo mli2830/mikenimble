@@ -2,9 +2,12 @@
 
 ##Please follow these instructions to reproduce the glitches
 - clone this repo
-- make (make makestuff into current repo)
 
-## Hanging problem
+## Pointer problem 
+Just run nimble_pointer.R any way you want
+
+# FIXED(kinda)
+## Hanging problem (DONE, just useConjugency=FALSE)
 
 type "make nimble_hang.Rout
 This will cause a hanging problem.
@@ -13,7 +16,7 @@ This will cause a hanging problem.
 I used an empty Jags model to "simulate/generate" data for this example via NA trick.
 Initializing the nimble model is not a problem. The problem is it will hang when you want to do nimble MCMC stuff. Jags works fine via MCMCsuite.
 
-# Inprod problem (already a noted issue, please fix)
+# Inprod problem (DONE)
  
 CPP inprod problem. I want to use matrix multiplication in the future, but if that doesn't work, I want to fall back to inprod. ATM, inprod doesn't work. It runs nicely if I expand it out myself. 
 
