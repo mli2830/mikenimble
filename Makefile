@@ -11,8 +11,8 @@ target pngtarget pdftarget vtarget acrtarget: nimble_hang.Rout
 # make files
 
 Sources = Makefile .gitignore README.md stuff.mk LICENSE.md
-# include stuff.mk
-# include $(ms)/perl.def
+ include stuff.mk
+ include $(ms)/perl.def
 
 ##################################################################
 
@@ -27,6 +27,8 @@ nimble_hang.Rout:	jags.RData nimcode.R nimble_hang.R
 nimble_inprod.Rout:	jags.Rout params2.R nimcode2.R nimcode22.R nimble_inprod.R
 			$(run-R)
 
+nimble_pointer.Rout:	nimble_pointer.R
+			$(run-R)
 
 
 ######################################################################
@@ -36,7 +38,6 @@ nimble_inprod.Rout:	jags.Rout params2.R nimcode2.R nimcode22.R nimble_inprod.R
 ## Change this name to download a new version of the makestuff directory
 # Makefile: start.makestuff
 
-ms = makestuff/
 
 -include $(ms)/git.mk
 -include $(ms)/visual.mk
@@ -44,6 +45,3 @@ ms = makestuff/
  -include $(ms)/wrapR.mk
  -include $(ms)/oldlatex.mk
 
-
-makestuff: 
-	   git clone https://github.com/mli2830/makestuff.git

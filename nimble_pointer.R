@@ -49,7 +49,7 @@ suite <- function(type){
                    , monitors=c("R0")
                    , MCMCdefs = list(
                      mikenim = quote({
-                       mcmcspec <- configureMCMC(modxx, useConjugacy = FALSE)
+                       mcmcspec <- configureMCMC(tempmod, useConjugacy = FALSE)
                        mcmcspec
                      })
                    )
